@@ -29,5 +29,5 @@ This project investigates the impact of socio-economic factors and behavioral ha
 1. Clone the repository: `git clone https://github.com/yourusername/student-performance-analysis.git`
 2. The `data/` folder contains the cleaned CSV used for all analyses.
 3. Run `DataSet.py` to see the data simulation.
-4. Open `.Rhistory` in RStudio to view the regression outputs.
+4. Open `R_Commands.txt` to copy commands in RStudio to view the regression outputs.
 5. Run `Visualization_Script.py` to regenerate the charts.
