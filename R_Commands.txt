@@ -1,0 +1,38 @@
+data <- read.csv("cleaned_student_data.csv")
+print("--- Descriptive Statistics ---")
+summary(data)
+#3.Correlation analysis
+#Let's see how strongly variables are related to the final grade
+#We drop the 'student_id' column because it's irrelevant
+numeric_data <- data[, -1]
+cor_matrix <- cor(numeric_data, use = "complete.obs")
+print("--- Correlation Matrix ---")
+print(round(cor_matrix, 2))
+save.image("C:\\Users\\Admin\\OneDrive - ARIAS LABS SYSTEM SL\\Desktop\\Analysis of Student Performance\\.RData")
+q()
+summary(data)
+regression_model <- cor(numeric_data, use = 'complete.obs')
+print('---Correlation Matrix---')
+summary(regression_model)
+# 1. Load the dataset
+# Make sure the CSV is in your current working directory!
+data <- read.csv("cleaned_student_data.csv")
+# 2. Descriptive Statistics
+# This gives you the mean, median, min, and max for all variables
+print("--- Descriptive Statistics ---")
+summary(data)
+# 3. Correlation Analysis
+# Let's see how strongly variables are related to the Final Grade (G3)
+# We drop the 'student_id' column because it's irrelevant to the stats
+numeric_data <- data[, -1] 
+cor_matrix <- cor(numeric_data, use = "complete.obs")
+print("--- Correlation Matrix ---")
+print(round(cor_matrix, 2))
+# 4. Multiple Linear Regression Model
+# Hypothesis: Study time, mother's education, internet, and absences predict the final grade.
+regression_model <- lm(G3 ~ studytime + Medu + internet + absences, data = data)
+# 5. Output the Regression Results
+print("--- Regression Model Summary ---")
+summary(regression_model)
+save.image("C:\\Users\\Admin\\OneDrive - ARIAS LABS SYSTEM SL\\Desktop\\Analysis of Student Performance\\.RData")
+q()
